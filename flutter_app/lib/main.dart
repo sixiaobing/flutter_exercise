@@ -1,6 +1,7 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_app/ItemData.dart';
 
 void main() => runApp(MyApp());
 
@@ -34,13 +35,20 @@ class MyTest1Page extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return new Scaffold(
-        appBar: AppBar(title: Text('AppBar'),),
+        appBar: AppBar(
+          title: Text('AppBar'),
+        ),
 //        Text('文本',style: TextStyle(fontSize: 50,color: Colors.blue,),textAlign: TextAlign.end,),
         body: Center(
-          child: Text('文本', style: TextStyle(fontSize: 50, color: Colors.blue,),
-            textAlign: TextAlign.start,),
-        )
-    );
+          child: Text(
+            '文本',
+            style: TextStyle(
+              fontSize: 50,
+              color: Colors.blue,
+            ),
+            textAlign: TextAlign.start,
+          ),
+        ));
   }
 }
 
@@ -64,7 +72,6 @@ class MyHomePage extends StatefulWidget {
 // used by the build method of the State. Fields in a Widget subclass are
 // always marked "final".
 
-
 }
 
 Future<String> loadAsset() async {
@@ -80,7 +87,6 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter += 2;
     });
   }
-
 
   //导航到新路由
   void _onFlatButton() {
@@ -127,18 +133,16 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme
-                  .of(context)
-                  .textTheme
-                  .display1,
+              style: Theme.of(context).textTheme.display1,
             ),
-
             FlatButton(
               child: Text('打开新的路由页面'),
               textColor: Colors.red,
               color: Colors.blue,
-              padding: EdgeInsets.only(left: 30,top: 10,right: 30,bottom: 10),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+              padding:
+                  EdgeInsets.only(left: 30, top: 10, right: 30, bottom: 10),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0)),
               onPressed: _onFlatButton,
             ),
             new RandomWordsWidget(),
@@ -158,12 +162,9 @@ class _MyHomePageState extends State<MyHomePage> {
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
-
 }
 
 class RandomWordsWidget extends StatelessWidget {
-
-
   @override
   Widget build(BuildContext context) {
     //生成随机字符串
@@ -181,9 +182,8 @@ class NewRoute extends StatelessWidget {
         title: Text("新的路由界面"),
       ),
       body: Center(
-        child: Text("新的路由页面的内容"),
+        child: new ItemDatas(),
       ),
     );
   }
-
 }
