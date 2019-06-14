@@ -182,7 +182,12 @@ class NewRoute extends StatelessWidget {
         title: Text("新的路由界面"),
       ),
       body: Center(
-        child: new ItemDatas(),
+        child: new ListView.builder(
+          itemBuilder: (context, index) {
+            return new ItemDatas();
+          },
+          itemCount: 20,
+        ),
       ),
     );
   }
