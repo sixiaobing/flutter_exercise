@@ -15,7 +15,7 @@ class ItemDatas extends StatelessWidget {
           children: <Widget>[
             Text('数据元素'),
             Text('间隔',style: TextStyle(fontSize: 20),),
-            Icon(Icons.access_alarms),
+            Icon(Icons.ac_unit)
           ],
         ),
       ),
